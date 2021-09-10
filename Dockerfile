@@ -1,5 +1,5 @@
 
-FROM ubuntu:latest
+FROM httpd:latest
 RUN apt update && apt upgrade -y
 RUN DEBIAN_FRONTEND="noninteractive" apt install tzdata -y
 RUN apt-get install apache2 libapache2-mod-wsgi-py3 python3-pip -y
