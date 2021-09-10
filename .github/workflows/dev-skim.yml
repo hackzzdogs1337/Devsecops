@@ -1,8 +1,6 @@
 name: "DevSkim-Scan"
 
-on: 
-  push:
-    branches: [master]
+on: push
 
 jobs:
   test:
