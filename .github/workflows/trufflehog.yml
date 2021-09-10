@@ -1,8 +1,6 @@
 name: "TruffleHog"
 #this workflow just need to pass
-on: 
-  push:
-    branches: [master]
+on: push
 
 jobs:
   test:
