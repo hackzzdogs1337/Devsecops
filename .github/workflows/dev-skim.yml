@@ -1,5 +1,5 @@
 name: "DevSkim-Scan"
-# Following https://github.com/microsoft/DevSkim-Action
+
 on: push
 
 jobs:
