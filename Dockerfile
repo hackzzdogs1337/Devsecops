@@ -2,7 +2,7 @@ FROM httpd:latest
 RUN apt update && apt upgrade -y \
     && DEBIAN_FRONTEND="noninteractive" apt install tzdata -y \
     && apt-get install apache2 libapache2-mod-wsgi-py3 python3-pip -y \
-    && pip3 install pipenv
+    && pip3 install pipenv django
 COPY krakenweb /var/www/html/kraken
 
 COPY config/kraken.conf /etc/apache2/sites-available/kraken.conf
