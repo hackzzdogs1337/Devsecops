@@ -1,0 +1,30 @@
+name: "Dependency-Check"
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        pip3 install -r requirements.txt
+      
+      
+    - name: Depcheck
+      uses: dependency-check/Dependency-Check_Action@main
+      id: Depcheck
+      with:
+        project: 'test'
+        path: '.'
+        format: 'HTML'
+
+    - name: Upload test result
+      uses: actions/upload-artifact@v2
+      with:
+        name: Depcheck report
+        path: ${{github.workspace}}/reports
