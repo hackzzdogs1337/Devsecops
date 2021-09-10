@@ -1,8 +1,6 @@
 name: "sbom-scan"
 
-on:
-  push:
-    branches: [master]
+on: push
 
 jobs:
   test:
