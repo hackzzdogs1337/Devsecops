@@ -15,7 +15,7 @@ jobs:
         pip3 install -r requirements.txt
       
       
-    - name: CCycloneDX Node.js Generate SBOM
+    - name: CCycloneDX Python Generate SBOM
       uses: CycloneDX/gh-python-generate-sbom@v1
 
     - name: Archive production artifacts
