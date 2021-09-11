@@ -1,0 +1,26 @@
+name: "sbom-scan"
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        pip3 install -r requirements.txt
+      
+      
+    - name: CCycloneDX Node.js Generate SBOM
+      uses: CycloneDX/gh-python-generate-sbom@v1
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: SBOM Report
+        path: |
+          ./bom.xml
