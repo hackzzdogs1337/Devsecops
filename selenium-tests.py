@@ -14,6 +14,6 @@ try:
     driver.find_element_by_name("username").send_keys(username)
     driver.find_element_by_name("password").send_keys(password)
     driver.find_element_by_class_name("submit").send_keys(Keys.ENTER)
-except:
+except AssertionError:
     print("Unit testing failed")
 driver.close()
