@@ -10,7 +10,7 @@ EXPOSE 8000
 
 WORKDIR /var/www/html/kraken/
 
-RUN pip3 install requirements.txt \
+RUN pip3 install -r requirements.txt \
     && python3 manage.py collectstatic
 
 ENTRYPOINT [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
