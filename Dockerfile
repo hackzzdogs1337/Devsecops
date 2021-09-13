@@ -9,9 +9,9 @@ COPY . /var/www/html/kraken/
 
 EXPOSE 8000
 
-WORKDIR /var/www/html/kraken/
+WORKDIR /var/www/html/kraken/krakenweb
 
-RUN pip3 install --upgrade -r requirements.txt \
+RUN pip3 install --upgrade -r ../requirements.txt \
     && python3 manage.py collectstatic
 
 ENTRYPOINT [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
