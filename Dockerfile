@@ -3,7 +3,7 @@ FROM httpd:latest
 RUN apt-get update \
     && DEBIAN_FRONTEND="noninteractive" apt install tzdata -y \
     && apt-get install python3-pip -y  \
-    && pip install --upgrade pip
+    && pip3 install --upgrade pip
 
 COPY . /var/www/html/kraken/
 
