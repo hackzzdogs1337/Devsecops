@@ -122,12 +122,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[
-    'images',
-    'login-form-11',
-    'shop/templates'
-]
+    'static']
 
-STATIC_ROOT=os.path.join(BASE_DIR,'static/')
+STATIC_ROOT=os.path.join(BASE_DIR,'staticroot/')
 LOGIN_URL= '/users/login'
 
 LOGIN_REDIRECT_URL='shop:home'

@@ -20,7 +20,6 @@ class Item:
 def resulttomodel(result):
     return Item(result[0],result[1],result[2],result[3])
 
-@login_required
 def home(request):
     cursor=con.cursor()
     search_param=request.GET.get('search')
@@ -38,7 +37,6 @@ def home(request):
     
     return render(request,template_name='index.html',context=context)
 
-@login_required
 def product_page(request):
     if(request.method=="GET"):
         title=request.GET.get("title")
