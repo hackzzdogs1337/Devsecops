@@ -40,4 +40,4 @@ jobs:
         LOGIN_USERNAME: ${{secrets.LOGIN_USERNAME}}
         LOGIN_PASSWORD: ${{secrets.LOGIN_PASSWORD}}      
       run: |
-        python selenium-test.py
+        python selenium-tests.py
