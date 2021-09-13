@@ -38,7 +38,7 @@ jobs:
     - name: Build and Run Docker image
       run: |
         docker build . --file Dockerfile -t lifesogood
-        docker run --rm -p 8000:8000 lifesogood
+        docker run --rm -p -d 8000:8000 lifesogood
 
 
     - name: Run selenium
