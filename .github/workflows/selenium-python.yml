@@ -1,4 +1,4 @@
-name: CI build
+name: Selenium Test
 
 on: push
 
