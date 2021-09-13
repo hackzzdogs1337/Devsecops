@@ -1,0 +1,43 @@
+name: CI build
+
+on: push
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # - name: Lint with flake8
+    #   run: |
+    #     pip install flake8
+    #     # Stop the build if there are flake8 issues
+    #     flake8 . --count --show-source --statistics --exclude=temp
+
+    - name: Install Chrome 
+      run: |
+        sudo apt install google-chrome-stable
+
+    - name: Check the console scripts interface
+      run: |
+        seleniumbase help
+
+    - name: Install chromedriver
+      run: |
+        seleniumbase install chromedriver
+
+    - name: Run selenium
+      env:
+        LOGIN_USERNAME: ${{secrets.LOGIN_USERNAME}}
+        LOGIN_PASSWORD: ${{secrets.LOGIN_PASSWORD}}      
+      run: |
+        python selenium-test.py

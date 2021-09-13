@@ -5,5 +5,10 @@ RUN apt-get update \
     && pip3 install django pillow
 COPY krakenweb /var/www/html/kraken/
 
+EXPOSE 8000
 
-EXPOSE 80/tcp
+WORKDIR /var/www/html/kraken/
+
+RUN python3 manage.py collectstatic 
+
+ENTRYPOINT [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
