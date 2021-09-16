@@ -1,4 +1,6 @@
 django
+pillow
 lxml
 urllib3==1.25.2
 selenium
+seleniumbase
