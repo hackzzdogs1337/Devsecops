@@ -4,5 +4,6 @@ The DevSecOps Pipeline include the following tasks:
 - SAST
 - DAST
 - Secret scanning
+- SCA
 - Secure deployment to AWS
 - IAC
